@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NAMEWRECKED — Roast & Rhyme</title>
+<meta name="description" content="Put in a name. Get a ridiculous song. For free.">
+<style>
+:root{--bg:#07070b;--card:#111119;--line:#292936;--text:#fff;--muted:#aaaab5;--pink:#ff3d87;--violet:#8b61ff;--yellow:#ffe45e}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 10% 0,#351038,transparent 35%),radial-gradient(circle at 95% 20%,#16264f,transparent 35%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,sans-serif}.wrap{width:min(960px,92%);margin:auto;padding:28px 0 70px}
+nav{display:flex;justify-content:space-between;align-items:center;margin-bottom:55px}.logo{font-weight:1000;font-size:22px;letter-spacing:-1px}.logo b{color:var(--pink)}.free{border:1px solid #3a3a49;padding:8px 12px;border-radius:99px;color:var(--yellow);font-size:12px;font-weight:900}
+.hero{text-align:center}.eyebrow{color:var(--yellow);font-size:12px;letter-spacing:2px;font-weight:900}.hero h1{font-size:clamp(50px,11vw,105px);line-height:.84;letter-spacing:-6px;margin:15px 0}.hero h1 b{color:var(--pink);text-shadow:0 0 35px #ff3d8755}.hero p{color:var(--muted);font-size:18px}
+.card{margin-top:30px;background:#101017ed;border:1px solid var(--line);border-radius:28px;padding:25px;box-shadow:0 30px 90px #0009;backdrop-filter:blur(14px)}label{display:block;color:var(--muted);font-size:11px;font-weight:900;text-transform:uppercase;letter-spacing:1.4px;margin-bottom:9px}
+input{width:100%;padding:18px;border-radius:15px;border:1px solid #373743;background:#08080d;color:#fff;font-size:20px;outline:0}input:focus{border-color:var(--pink);box-shadow:0 0 0 3px #ff3d8720}.grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:20px}.choices{display:flex;flex-wrap:wrap;gap:8px}.choice{background:#171720;border:1px solid var(--line);color:#ddd;padding:11px 12px;border-radius:12px;font-weight:800;cursor:pointer}.choice.active{border-color:var(--pink);background:#ff3d8715;color:#fff}
+.cta{width:100%;margin-top:23px;border:0;border-radius:16px;padding:18px;background:linear-gradient(90deg,var(--pink),var(--violet));color:#fff;font-size:17px;font-weight:1000;cursor:pointer}.result{display:none}.result.show{display:block}.title{font-size:30px;margin:5px 0 12px}.lyrics{white-space:pre-wrap;background:#08080d;border:1px solid var(--line);border-radius:17px;padding:20px;line-height:1.75;color:#eee}.actions{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}.action{background:#181821;color:#fff;border:1px solid var(--line);padding:12px 14px;border-radius:12px;font-weight:900;cursor:pointer}audio{width:100%;margin-top:15px}small{display:block;color:#777;margin-top:12px;line-height:1.5}
+footer{text-align:center;color:#666;font-size:12px;margin-top:35px}@media(max-width:700px){.grid{grid-template-columns:1fr}.hero h1{letter-spacing:-4px}.card{padding:18px}}
+</style></head><body><main class="wrap">
+<nav><div class="logo">NAME<b>WRECKED</b> 💀</div><div class="free">100% FREE MVP</div></nav>
+<section class="hero"><div class="eyebrow">ROAST & RHYME™</div><h1>NAME<b>WRECKED</b></h1><p>Put in a name. Get a ridiculous song. 😂</p></section>
+<section class="card">
+<label>Whose name are we wrecking?</label><input id="name" maxlength="50" placeholder="Type a name..." autofocus>
+<div class="grid">
+<div><label>Choose your chaos</label><div class="choices" id="vibe">
+<button class="choice active" data-v="funny">😂 Funny</button><button class="choice" data-v="petty">💅 Petty</button><button class="choice" data-v="unhinged">🤪 Unhinged</button><button class="choice" data-v="rap">🎤 Rap</button><button class="choice" data-v="party">🥳 Party</button><button class="choice" data-v="kid">🧒 Kid Chaos</button></div></div>
+<div><label>Music vibe</label><div class="choices" id="genre"><button class="choice active" data-v="pop">🎶 Pop</button><button class="choice" data-v="hip-hop">🔥 Hip-Hop</button><button class="choice" data-v="r-and-b">💜 R&B</button><button class="choice" data-v="country">🤠 Country</button><button class="choice" data-v="dance">🪩 Dance</button><button class="choice" data-v="rock">🎸 Rock</button></div></div>
+</div>
+<div style="margin-top:20px"><label>Roast level</label><div class="choices" id="intensity"><button class="choice" data-v="mild">🙂 Mild</button><button class="choice active" data-v="wrecked">💀 Wrecked</button><button class="choice" data-v="maximum">🚨 Maximum Chaos</button></div></div>
+<button class="cta" id="go">💀 WRECK THIS NAME — FREE</button>
+</section>
+<section class="card result" id="result"><div class="eyebrow">ROAST & RHYME PRESENTS</div><h2 class="title" id="title"></h2><div class="lyrics" id="lyrics"></div>
+<div class="actions"><button class="action" id="speak">🔊 PLAY WITH VOICE</button><button class="action" id="stop">⏹ STOP</button><button class="action" id="worse">🤣 MAKE IT WORSE</button><button class="action" id="again">🔄 REMIX</button><button class="action" id="copy">📋 COPY</button><button class="action" id="share">📤 SHARE</button></div>
+<small>Free mode uses your device's built-in speech voice. No music/audio API is required. The genre button controls the joke style in this $0 MVP; true AI-sung music can be added later when the app earns enough to pay for generation.</small></section>
+<footer>NAMEWRECKED is for playful jokes — not serious allegations or real-world beef. 💀</footer>
+</main>
+<script>
+let vibe="funny",genre="pop",intensity="wrecked",last=null;
+const $=id=>document.getElementById(id);
+function choices(id,set){document.querySelectorAll("#"+id+" .choice").forEach(b=>b.onclick=()=>{document.querySelectorAll("#"+id+" .choice").forEach(x=>x.classList.remove("active"));b.classList.add("active");set(b.dataset.v)})}
+choices("vibe",v=>vibe=v);choices("genre",v=>genre=v);choices("intensity",v=>intensity=v);
+async function generate(){const name=$("name").value.trim();if(!name){$("name").focus();return}
+$("go").disabled=true;$("go").textContent="💀 WRECKING...";
+try{const r=await fetch("/api/generate",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({name,vibe,genre,intensity})});last=await r.json();if(!r.ok)throw Error(last.error);$("title").textContent="🎵 "+last.title;$("lyrics").textContent=last.lyrics;$("result").classList.add("show");$("result").scrollIntoView({behavior:"smooth"});}catch(e){alert(e.message)}finally{$("go").disabled=false;$("go").textContent="💀 WRECK THIS NAME — FREE"}}
+$("go").onclick=generate;$("again").onclick=generate;$("worse").onclick=()=>{intensity="maximum";generate()};
+$("speak").onclick=()=>{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(last.lyrics);u.rate=.92;u.pitch=1.05;speechSynthesis.speak(u)};$("stop").onclick=()=>speechSynthesis.cancel();
+$("copy").onclick=async()=>{await navigator.clipboard.writeText(last.title+"\\n\\n"+last.lyrics);$("copy").textContent="✅ COPIED";setTimeout(()=>$("copy").textContent="📋 COPY",1200)};
+$("share").onclick=async()=>{const text=last.title+"\\n\\n"+last.lyrics;if(navigator.share){await navigator.share({title:"NAMEWRECKED",text})}else{await navigator.clipboard.writeText(text);alert("Song copied — paste it anywhere to share!")}};
+$("name").onkeydown=e=>{if(e.key==="Enter")generate()};
+</script></body></html>

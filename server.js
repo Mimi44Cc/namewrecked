@@ -52,5 +52,5 @@ app.post("/api/generate",(req,res)=>{
     : `No hard feelings — just jokes in the booth.\n${n} brought the chaos, and that's the truth! 😂`;
   res.json({title:s.title,lyrics:`[VERSE 1]\n${s.lines.join("\n")}\n\n[CHORUS]\n${chorus}\n\n[VERSE 2]\n${n} got three new plans and forgot plan one,\nStarted a whole new adventure before the old one's done.\nSaid "I got this!" with a confident grin,\nThen looked at everybody like, "Okay... who can help me win?"\n\n[CHORUS]\n${chorus}\n\n[OUTRO]\n${outro}`,name:n,vibe,genre,intensity});
 });
-app.get("*",(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
+app.get("/{*splat}",(req,res)=>res.sendFile(path.join(__dirname,"public","index.html")));
 app.listen(process.env.PORT||3000,()=>console.log("NAMEWRECKED FREE running on http://localhost:3000"));
